@@ -3,18 +3,20 @@
 {% block title %} Blog {% endblock %}
 {% block body %}
 <br>
-<div class="container-fluid">
+<div class="my-3 p-3 bg-white rounded shadow-sm">
 <h2>Sample Blog Post</h2>
     <small class="text-muted">Nov 06, 2018</small>
-    <p class="article-content">First post content- cannot edit, if you would like to edit, please create a post, then click on the title, and you can edit post there</p><br>
-
+    <p class="article-content">First post content- cannot edit, if you would like to edit, please create a post, then click on the title to view details of the post and can edit post there</p><br>
+</div>
 
   {% for post in posts %}
+<div class="my-3 p-3 bg-white rounded shadow-sm">
     <h2><a class="article-title" href="{{ url_for('post', blog_id=post.blog_id) }}">{{ post.title }}</a></h2>
     <small class="text-muted">{{ post.date.strftime('%b %d, %Y') }}</small>
     <p class="article-content">{{ post.description}}</p><br>
-  {% endfor %}
 </div>
+  {% endfor %}
+
 
 <script src=""></script> 
 
