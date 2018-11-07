@@ -19,7 +19,7 @@ Important FYIs:<br>
 * When finished, please put code on github and share the repo link with us.
 * Please use your best judgment for any open questions.
 
-<img src="/static/homepage.JPG">
+<img src="/static/homepage.jpg">
 
 ## Table of Contents
 
@@ -49,7 +49,7 @@ After clicking Edit Post, data from the post will already appear in place and ca
 <img src="/static/edited.jpg">
 
 Updated post will appear on homepage <br><br>
-<img src="/static/edited_homepage.jpg"><
+<img src="/static/edited_homepage.jpg">
 
 
 ## <a name="installation"></a>Setup/Installation
