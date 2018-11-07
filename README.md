@@ -36,9 +36,10 @@ __Backend:__ Python, Flask, PostgreSQL, SQLAlchemy<br>
 
 Can Create a post by clicking Create on NavBar <br>
 After filling in information for Title, Description, Date, and clicking submit, new post is displayed in homepage<br>
-Can view details of the post and edit a post by clicking on the Title of the post <br><br>
+Can view details of the post and edit a post by clicking on the Title of the post <br>
 After clicking Edit Post, data from the post will already appear in place and can edit/update post <br>
-Updated post will appear on homepage <br>
+Updated post will appear on homepage <br><br>
+
 <img src="/static/blog.gif">
 
 ## <a name="installation"></a>Setup/Installation
