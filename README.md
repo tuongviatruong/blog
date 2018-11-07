@@ -1,25 +1,29 @@
 # Blogging Application
-Coding Task
+Coding Task: <br>
 The task is pretty open ended and the time allotted is up to you, though please limit yourself to a few hours maximum.
 
-Directions:
+Directions: <br>
 Using Python/Django or Flask, create a simple blogging application. The home page should show a list of blog posts, with the ability to click into the details of the post. The following views/functionality are expected:
 
-*List view of posts
-*Detail view of post
-*Create a post (just title + description + created date) (**look at django forms)
-*Edit a post
-*Posts should persist using a database to store them
-*You can use Bootstrap (http://getbootstrap.com/) to style your markup or material design (https://github.com/FezVrasta/bootstrap-material-design) if you prefer.
+* List view of posts
+* Detail view of post
+* Create a post (just title + description + created date) (**look at django forms)
+* Edit a post
+* Posts should persist using a database to store them
+* You can use Bootstrap (http://getbootstrap.com/) to style your markup or material design (https://github.com/FezVrasta/bootstrap-material-design) if you prefer.
 
-Important FYIs:
-*Make your code as well documented and cleanly structured as possible.
-*Please mention any tests (automated or otherwise) conducted and code coverage for the same.
-*No need to worry authentication/permissions/etc.
-*When finished, please put code on github and share the repo link with us.
-*Please use your best judgment for any open questions.
+Important FYIs:<br>
+* Make your code as well documented and cleanly structured as possible.
+* Please mention any tests (automated or otherwise) conducted and code coverage for the same.
+* No need to worry authentication/permissions/etc.
+* When finished, please put code on github and share the repo link with us.
+* Please use your best judgment for any open questions.
 
+<<<<<<< HEAD
 <img src="/static//blog.gif">
+=======
+<img src="/static/homepage.jpg">
+>>>>>>> 7d27c07f5faa4e06552a8e8d165150ee0ad171f9
 
 ## Table of Contents
 
@@ -40,6 +44,11 @@ After filling in information for Title, Description, Date, and clicking submit, 
 Can view details of the post and edit a post by clicking on the Title of the post <br><br>
 After clicking Edit Post, data from the post will already appear in place and can edit/update post <br><br>
 Updated post will appear on homepage <br><br>
+<<<<<<< HEAD
+=======
+<img src="/static/edited_homepage.jpg">
+
+>>>>>>> 7d27c07f5faa4e06552a8e8d165150ee0ad171f9
 
 ## <a name="installation"></a>Setup/Installation
 
