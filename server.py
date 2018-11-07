@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, SubmitField
+from wtforms.validators import DataRequired
 
 from datetime import datetime
 from jinja2 import StrictUndefined
@@ -8,45 +11,55 @@ app = Flask(__name__)
 app.secret_key = "SECRETSECRETSECRET"
 app.jinja_env.undefined = StrictUndefined
 
-posts = [
-    {
-        'title': 'Blog Post 1',
-        'description': 'First post content',
-        'date_posted': 'November 6, 2018'
-    },
-    {
-        'title': 'Blog Post 2',
-        'description': 'Second post content',
-        'date_posted': 'November 6, 2018'
-    }
-]
-
+class BlogForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    description = TextAreaField('Description', validators=[DataRequired()])
+    date = StringField('Date', validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
 @app.route('/')
 def homepage():
-    """Show homepage"""
-
+    """Show homepage with one blog already shown, show all in database after creating post"""
+    posts = Blog.query.all()
     return render_template("homepage.html", posts=posts)
 
-@app.route('/create-form')
+@app.route('/create', methods=["GET", "POST"])
 def create_form():
-    """"Create a post form"""
+    """"Create a post and add to database"""
+    form = BlogForm()
+    if form.validate_on_submit():
+        post = Blog(title=form.title.data,description=form.description.data,date=form.date.data)
+        db.session.add(post)
+        db.session.commit()
+        return redirect('/')
+    return render_template("create_form.html", title="Create a Post", form=form)
 
-    return render_template("create_form.html")
 
-@app.route('/create', methods=["POST"])
-def create_post():
-    """Create a post"""
-    title = request.form['title']
-    description = request.form['description']
-    date = request.form['date']
-    post = Blog(title=title, description=description, date=date)
+@app.route('/post/<int:blog_id>')
+def post(blog_id):
+    """Shows one post when clicked"""
+    post = Blog.query.get(blog_id)
 
-    db.session.add(post)
-    d.session.commit()
+    return render_template('post.html', post=post)
 
-    return redirect('/')
+@app.route('/post/<int:blog_id>/edit', methods=["GET", "POST"])
+def edit_post(blog_id):
+    """Edit post with data and edit database"""
+    post = Blog.query.get(blog_id)
 
+    form = BlogForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.description = form.description.data
+        post.date= form.date.data
+        db.session.commit()
+        return redirect(url_for('post', blog_id=post.blog_id))
+
+    form.title.data = post.title
+    form.description.data = post.description
+    form.date.data = post.date
+
+    return render_template("create_form.html", title="Edit Post", form=form)
 
 
 if __name__ == "__main__":
