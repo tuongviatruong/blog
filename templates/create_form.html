@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Create a Post {% endblock %}
+{% block body %}
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+
+    <h2>Create a Post</h2>
+
+    <form action="/create" method="POST">
+        <p>Title: <input class="form-control" type="text" name="title" required></p><br>
+        <p>Description: <input class="form-control" type="text" name="description" required></p><br>
+        <p>Date: <input class="form-control" type="text" name="date" required></p><br>
+
+        <input type="submit" value="Log In" class="btn btn-primary">
+
+    </form>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

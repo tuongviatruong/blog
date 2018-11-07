@@ -12,12 +12,12 @@ posts = [
     {
         'title': 'Blog Post 1',
         'description': 'First post content',
-        'date_posted': 'April 20, 2018'
+        'date_posted': 'November 6, 2018'
     },
     {
         'title': 'Blog Post 2',
         'description': 'Second post content',
-        'date_posted': 'April 21, 2018'
+        'date_posted': 'November 6, 2018'
     }
 ]
 
@@ -28,6 +28,24 @@ def homepage():
 
     return render_template("homepage.html", posts=posts)
 
+@app.route('/create-form')
+def create_form():
+    """"Create a post form"""
+
+    return render_template("create_form.html")
+
+@app.route('/create', methods=["POST"])
+def create_post():
+    """Create a post"""
+    title = request.form['title']
+    description = request.form['description']
+    date = request.form['date']
+    post = Blog(title=title, description=description, date=date)
+
+    db.session.add(post)
+    d.session.commit()
+
+    return redirect('/')
 
 
 
