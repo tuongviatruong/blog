@@ -9,7 +9,6 @@ from model import connect_to_db, db, Blog
 
 app = Flask(__name__)
 app.secret_key = "SECRETSECRETSECRET"
-app.jinja_env.undefined = StrictUndefined
 
 class BlogForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])

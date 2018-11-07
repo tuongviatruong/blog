@@ -2,18 +2,19 @@
 
 {% block title %} Blog {% endblock %}
 {% block body %}
-
-<h2>Blog Post 1</h2>
+<br>
+<div class="container-fluid">
+<h2>Sample Blog Post</h2>
     <small class="text-muted">Nov 06, 2018</small>
-    <p class="article-content">First post content- cannot edit, if you would like to edit, please create a post, click on the title, and edit</p>
+    <p class="article-content">First post content- cannot edit, if you would like to edit, please create a post, then click on the title, and you can edit post there</p><br>
 
 
   {% for post in posts %}
     <h2><a class="article-title" href="{{ url_for('post', blog_id=post.blog_id) }}">{{ post.title }}</a></h2>
     <small class="text-muted">{{ post.date.strftime('%b %d, %Y') }}</small>
-    <p class="article-content">{{ post.description}}</p>
+    <p class="article-content">{{ post.description}}</p><br>
   {% endfor %}
-
+</div>
 
 <script src=""></script> 
 

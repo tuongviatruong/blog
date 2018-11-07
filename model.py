@@ -23,22 +23,24 @@ class Blog(db.Model):
     __tablename__ = "blogs"
 
     blog_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    title = db.Column(db.String(100))
-    description = db.Column(db.String(100))
-    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    title = db.Column(db.String(150))
+    description = db.Column(db.Text)
+    date = db.Column(db.DateTime, nullable=False)
     # user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
 
     #Define relationship to user
     # user = db.relationship("User", backref="blogs")
-
-
 
     def __repr__(self):
         """Provide helpful representation when printed"""
         return "<Blog blog_id={} title={}>".format(self.blog_id, self.title)
 
 
+def example_data():
+    blog = Blog(title="Example Post", description="This is example post for testing", date="November 6 2018")
 
+    db.session.add(blog)
+    db.session.commit()
 
 ##############################################################################
 # Helper functions
