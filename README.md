@@ -19,7 +19,7 @@ Important FYIs:
 *When finished, please put code on github and share the repo link with us.
 *Please use your best judgment for any open questions.
 
-<img src="/static//homepage.JPG">
+<img src="/static//blog.gif">
 
 ## Table of Contents
 
@@ -36,21 +36,10 @@ __Backend:__ Python, Flask, PostgreSQL, SQLAlchemy<br>
 ## <a name="features"></a> Features
 
 Can Create a post by clicking Create on NavBar <br><br>
-<img src="/static/create_post.jpg">
-
 After filling in information for Title, Description, Date, and clicking submit, new post is displayed in homepage<br><br>
-<img src="/static/submit_post.jpg">
-
-Can view and edit a post by clicking on the Title of the post <br><br>
-<img src="/static/edit_option.jpg">
-
+Can view details of the post and edit a post by clicking on the Title of the post <br><br>
 After clicking Edit Post, data from the post will already appear in place and can edit/update post <br><br>
-<img src="/static/edit_post.jpg"><br>
-<img src="/static/edited.jpg">
-
 Updated post will appear on homepage <br><br>
-<img src="/static/edited_homepage.jpg"><
-
 
 ## <a name="installation"></a>Setup/Installation
 
