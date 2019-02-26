@@ -1,12 +1,12 @@
 # Simple Blog
 Using Python/Django or Flask, create a simple blogging application. The home page should show a list of blog posts, with the ability to click into the details of the post. The following views/functionality are expected:
 <br>
-*List view of posts
-*Detail view of post
-*Create a post (just title + description + created date) (**look at django forms)
-*Edit a post
-*Posts should persist using a database to store them
-*You can use Bootstrap (http://getbootstrap.com/) to style your markup or material design (https://github.com/FezVrasta/bootstrap-material-design) if you prefer.
+* List view of posts
+* Detail view of post
+* Create a post (just title + description + created date) (**look at django forms)
+* Edit a post
+* Posts should persist using a database to store them
+* You can use Bootstrap (http://getbootstrap.com/) to style your markup or material design (https://github.com/FezVrasta/bootstrap-material-design) if you prefer.
 
 ## Table of Contents
 
